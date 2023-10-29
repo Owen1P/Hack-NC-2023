@@ -3,7 +3,7 @@ import { Image, TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import FlashcardApp from './Flashcard.js';
-import MapScreen from './Map.js';
+import ChatBot from './ChatBot.js'; // Import the ChatBot component
 
 const Stack = createStackNavigator();
 
@@ -42,7 +42,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Flashcards" component={FlashcardApp} />
-        {/* <Stack.Screen name="Map" component={MapScreen} /> */}
+        <Stack.Screen name="ChatBot" component={ChatBot} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -59,8 +59,8 @@ function HomeScreen({ navigation }) {
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Connect')}>
           <Text style={styles.buttonText}>Connect</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Map')}>
-          <Text style={styles.buttonText}>Discuss</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ChatBot')}>
+          <Text style={styles.buttonText}>Lingo Bot</Text>
         </TouchableOpacity>
       </View>
     </View>
