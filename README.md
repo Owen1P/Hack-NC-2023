@@ -29,14 +29,14 @@ expo start
 
 The app will be accessible in your web browser or on a mobile device if you have the Expo Go app installed.
 
-##Usage
+## Usage
 Flashcards: Access the flashcards feature to start learning new words and concepts in your target language.
 
 Chatbot: Interact with the chatbot for language-related conversations and assistance.
 
 User Map: Use the map feature to discover nearby users and connect with them for language practice and community building.
 
-Contributing
+## Contributing
 If you'd like to contribute to LingoAlly, please follow these steps:
 
 Fork the repository.
