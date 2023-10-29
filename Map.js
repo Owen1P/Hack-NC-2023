@@ -17,8 +17,8 @@ let locationsOfInterest = [
   {
     title: "Abdul ",
     location: {
-      latitude: -30.2,
-      longitude: 150
+      latitude: 40.7128,
+      longitude: 74.0060,
     },
     description: "Native Arabic"
   }
