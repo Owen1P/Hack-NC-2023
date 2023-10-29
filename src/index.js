@@ -14,7 +14,7 @@ const Chatbot = () => {
 
             setMessages(previousMessages => GiftedChat.append(previousMessages, userMessage));
 
-            const messageText = userMessage.text.toLowerCase(); // Corrected the typo
+            const messageText = userMessage.text.toLowerCase(); 
 
             const response = await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
                 prompt: `${messageText}`, // Use template strings
@@ -52,7 +52,7 @@ const Chatbot = () => {
                     backgroundColor: '#fff',
                     padding: 10,
                     alignItems: 'center',
-                    justifyContent: 'center', // Corrected typo
+                    justifyContent: 'center', 
                     borderBottomWidth: 6,
                     borderColor: '#6EBA88',
                     marginTop: 40,
