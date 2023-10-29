@@ -127,14 +127,14 @@ const styles = StyleSheet.create({
   },
   controls: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Add space between elements
+    justifyContent: 'space-between',
     alignItems: 'center',
-    width: '80%', // Optional: Adjust the width to your preference
+    width: '80%', 
     marginTop: 20,
   },
   countContainer: {
-    flex: 1, // Takes up available space between icons
-    alignItems: 'center', // Center text horizontally
+    flex: 1,
+    alignItems: 'center', 
     
   },
   cardCount: {
@@ -146,3 +146,5 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
+
+
