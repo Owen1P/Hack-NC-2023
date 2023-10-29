@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
 const ProfileScreen = () => {
-  const [name, setName] = useState(''); // Initialize name state
-  const [nationality, setNationality] = useState(''); // Initialize nationality state
-
-  // Function to save user data to AsyncStorage
-  const saveUserData = async () => {
-    try {
-      await AsyncStorage.setItem('name', name);
-      await AsyncStorage.setItem('nationality', nationality);
-    } catch (error) {
-      console.error('Error saving user data:', error);
-    }
-  };
+  const [name, setName] = useState('');
+  const [nationality, setNationality] = useState('');
+  const navigation = useNavigation();
 
   // Function to load user data from AsyncStorage
   const loadUserData = async () => {
@@ -39,11 +31,20 @@ const ProfileScreen = () => {
     loadUserData();
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      // Load user data when the screen is in focus
+      loadUserData();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <Image
         style={styles.profileImage}
-        source={require('./icon.png')}
+        source={require('./assets/examplePerson.jpg')}
       />
       <Text style={styles.profileName}>{name || 'Name'}</Text>
       <Text style={styles.profileBio}>{nationality || 'Nationality'}</Text>
@@ -52,16 +53,7 @@ const ProfileScreen = () => {
       <Button
         title="Edit Profile"
         onPress={() => {
-          // Add navigation logic to edit the profile here
-
-          // For example, you can navigate to an EditProfileScreen
-          // and pass the saveUserData function as a prop to save changes.
-        }}
-        />
-        <Button
-        title="Edit Profile"
-        onPress={() => {
-  navigation.navigate('EditProfile');
+          navigation.navigate('EditProfile');
         }}
       />
     </View>
