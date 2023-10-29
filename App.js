@@ -3,7 +3,7 @@ import { Image, TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import FlashcardApp from './Flashcard.js';
-import ChatBot from './ChatBot.js'; // Import the ChatBot component
+import ChatBot from './ChatBot.js';
 
 const Stack = createStackNavigator();
 
@@ -12,27 +12,33 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 350,
+    height: 200,
+    marginBottom: 40,
   },
   buttonContainer: {
-    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 10,
   },
   button: {
-    backgroundColor: 'blue',
-    padding: 10,
-    margin: 10,
-    borderRadius: 25, // Make the button round
-    alignItems: 'center', // Center content horizontally
-    justifyContent: 'center', // Center content vertically
+    backgroundColor: '#51AFE5',
+    padding: 25,
+    margin: 25,
+    width: 200,
+    borderRadius: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 30,
     fontWeight: 'bold',
-    fontFamily: 'Arial',
+    fontFamily: 'Impact',
+    letterSpacing: 1.5,
   },
 });
 
@@ -40,9 +46,39 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Flashcards" component={FlashcardApp} />
-        <Stack.Screen name="ChatBot" component={ChatBot} /> 
+      <Stack.Screen
+          name=" "
+          component={HomeScreen}
+          options={{
+            headerShown: false, // Hide the header
+          }}
+        />
+
+        {/* <Stack.Screen name="Flashcards" component={FlashcardApp} */}
+         <Stack.Screen
+         name="Flashcards"
+         component={FlashcardApp}
+         options={{
+           title: 'Flashcards', // Set the title
+           headerTitleStyle: {
+             fontSize: 24, // Set the font size
+             fontWeight: 'bold',
+             
+           },
+           headerTintColor: '#6EBA88',
+           
+         }} />
+        <Stack.Screen name="ChatBot" component={ChatBot}options={{
+           title: '', // Set the title
+           headerTitleStyle: {
+             fontSize: 20, // Set the font size
+             fontWeight: 'bold',
+             
+             
+           },
+           headerTintColor: '#6EBA88',
+         }} />
+       
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -66,3 +102,4 @@ function HomeScreen({ navigation }) {
     </View>
   );
 }
+
