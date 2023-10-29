@@ -15,7 +15,7 @@ To get started with LingoAlly, follow these steps:
 
 1. Clone the repository to your local machine:
 
-```bash
+
 git clone https://github.com/your-username/lingo-ally-app.git
 
 Navigate to the project directory:
@@ -48,6 +48,6 @@ Create a pull request.
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Special thanks to the Expo and React Native communities for their incredible work.
+Thankyou to the Expo and React Native communities for their incredible work.
 
 Enjoy learning and connecting with LingoAlly!
