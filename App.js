@@ -5,7 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import FlashcardApp from './Flashcard.js';
 import ChatBot from './ChatBot.js';
 import Profile from './Profile.js';
-import EditProfileScreen from './EditProfileScreen.js'; // Import EditProfileScreen
+import EditProfileScreen from './EditProfileScreen.js'; 
+import Map from './Map.js';
+
 
 const Stack = createStackNavigator();
 
@@ -72,62 +74,77 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name=" "
-          component={HomeScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Flashcards"
-          component={FlashcardApp}
-          options={{
-            title: 'Flashcards',
-            headerTitleStyle: {
-              fontSize: 24,
-              fontWeight: 'bold',
-            },
-            headerTintColor: '#6EBA88',
-          }}
-        />
-        <Stack.Screen
-          name="ChatBot"
-          component={ChatBot}
-          options={{
-            title: '',
-            headerTitleStyle: {
-              fontSize: 20,
-              fontWeight: 'bold',
-            },
-            headerTintColor: '#6EBA88',
-          }}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={Profile}
-          options={{
-            title: 'Profile',
-            headerTitleStyle: {
-              fontSize: 20,
-              fontWeight: 'bold',
-            },
-            headerTintColor: '#6EBA88',
-          }}
-        />
-        <Stack.Screen
-          name="EditProfile"
-          component={EditProfileScreen}
-          options={{
-            title: 'Edit Profile',
-            headerTitleStyle: {
-              fontSize: 20,
-              fontWeight: 'bold',
-            },
-            headerTintColor: '#6EBA88',
-          }}
-        />
-      </Stack.Navigator>
+      <Stack.Screen
+        name=" "
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Flashcards"
+        component={FlashcardApp}
+        options={{
+          title: 'Flashcards',
+          headerTitleStyle: {
+            fontSize: 24,
+            fontWeight: 'bold',
+          },
+          headerTintColor: '#6EBA88',
+        }}
+      />
+      <Stack.Screen
+        name="ChatBot"
+        component={ChatBot}
+        options={{
+          title: '',
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 'bold',
+          },
+          headerTintColor: '#6EBA88',
+        }}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          title: 'Profile',
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 'bold',
+          },
+          headerTintColor: '#6EBA88',
+        }}
+      />
+    <Stack.Screen
+      name="Connect"
+      component={Map} 
+      options={{
+        title: 'Connect',
+        headerTitleStyle: {
+          fontSize: 20,
+          fontWeight: 'bold',
+        },
+        headerTintColor: '#6EBA88',
+      }}
+    />
+
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfileScreen}
+        options={{
+          title: 'Edit Profile',
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 'bold',
+          },
+          headerTintColor: '#6EBA88',
+        }}
+      />
+
+
+          </Stack.Navigator>
     </NavigationContainer>
   );
 }
@@ -163,3 +180,4 @@ function HomeScreen({ navigation }) {
     </View>
   );
 }
+
