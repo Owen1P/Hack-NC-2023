@@ -29,7 +29,7 @@ expo start
 
 The app will be accessible in your web browser or on a mobile device if you have the Expo Go app installed.
 
-Usage
+##Usage
 Flashcards: Access the flashcards feature to start learning new words and concepts in your target language.
 
 Chatbot: Interact with the chatbot for language-related conversations and assistance.
@@ -45,7 +45,7 @@ Make your changes and commit them.
 Push your branch to your forked repository.
 Create a pull request.
 
-License
+##License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 Thankyou to the Expo and React Native communities for their incredible work.
