@@ -6,14 +6,20 @@ import { useNavigation } from '@react-navigation/native';
 const ProfileScreen = () => {
   const [name, setName] = useState('');
   const [nationality, setNationality] = useState('');
+  const [firstLanguage, setFirstLanguage] = useState('');
+  const [secondLanguage, setSecondLanguage] = useState('');
   const navigation = useNavigation();
 
-  // Function to load user data from AsyncStorage
   const loadUserData = async () => {
     try {
       const savedName = await AsyncStorage.getItem('name');
       const savedNationality = await AsyncStorage.getItem('nationality');
-
+      const savedFirstLanguage = await AsyncStorage.getItem('firstLanguage'); // Change to 'firstLanguage'
+      const savedSecondLanguage = await AsyncStorage.getItem('secondLanguage');
+      if (savedSecondLanguage) {
+        setSecondLanguage(savedSecondLanguage);
+      }
+      
       if (savedName) {
         setName(savedName);
       }
@@ -21,6 +27,10 @@ const ProfileScreen = () => {
       if (savedNationality) {
         setNationality(savedNationality);
       }
+      if (savedFirstLanguage) {
+        setFirstLanguage(savedFirstLanguage);
+      }
+      
     } catch (error) {
       console.error('Error loading user data:', error);
     }
@@ -48,8 +58,8 @@ const ProfileScreen = () => {
       />
       <Text style={styles.profileName}>{name || 'Name'}</Text>
       <Text style={styles.profileBio}>{nationality || 'Nationality'}</Text>
-      <Text style={styles.profileInfo}>First language: Spanish</Text>
-      <Text style={styles.profileInfo}>Target language: English</Text>
+      <Text style={styles.profileInfo}>{firstLanguage || 'Native: ' + 'First Language'}</Text>
+      <Text style={styles.profileInfo}>{secondLanguage || 'Second Language'}</Text>
       <Button
         title="Edit Profile"
         onPress={() => {
