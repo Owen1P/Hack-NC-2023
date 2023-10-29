@@ -45,9 +45,6 @@ Make your changes and commit them.
 Push your branch to your forked repository.
 Create a pull request.
 
-##License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 Thankyou to the Expo and React Native communities for their incredible work.
 
 Enjoy learning and connecting with LingoAlly!
