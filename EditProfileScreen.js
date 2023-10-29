@@ -15,13 +15,14 @@ const EditProfileScreen = ({ navigation }) => {
   const nationalityOptions = ['Select Nationality', 'German', 'American', 'Spanish'];
   const firstLanguageOptions = ['Select First Language', 'English', 'Spanish', 'German'];
   const targetLanguageOptions = ['Select Target Language', 'English', 'Spanish', 'German'];
+  
 
   const saveChanges = async () => {
     try {
       await AsyncStorage.setItem('name', newName);
       await AsyncStorage.setItem('nationality', newNationality);
       await AsyncStorage.setItem('firstLanguage', firstLanguage);
-      await AsyncStorage.setItem('targetLanguage', targetLanguage);
+      await AsyncStorage.setItem('secondLanguage', targetLanguage);
       await AsyncStorage.setItem('location', location);
       // Update the profile information in real-time
       navigation.setParams({ name: newName, nationality: newNationality });
