@@ -6,7 +6,7 @@ import axios from 'axios'
 const Chatbot = () => {
     const [messages, setMessages] = useState([])
 
-    const CHATGPT_API_KEY = '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'
+    const CHATGPT_API_KEY = key
 
     const handleSend = async (newMessages = []) => {
         try {
