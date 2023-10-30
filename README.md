@@ -15,9 +15,6 @@ To get started with LingoAlly, follow these steps:
 
 1. Clone the repository to your local machine:
 
-
-git clone https://github.com/your-username/lingo-ally-app.git
-
 Navigate to the project directory:
 cd lingo-ally-app
 
